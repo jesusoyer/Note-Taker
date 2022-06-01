@@ -64,7 +64,28 @@ app.post('/api/notes', (req,res)=>{
     res.json(newNote);
 });
 
+app.delete("/api/notes/:id", function (req, res) {
+    let jsonFilePath = path.join(__dirname, "./db/db.json");
+    // request to delete note by id.
+    for (let i = 0; i < db.length; i++) {
 
+        if (db[i].id == req.params.id) {
+            // Splice takes i position, and then deletes the 1 note.
+            db.splice(i, 1);
+            break;
+        }
+    }
+    // Write the db.json file again.
+    fs.writeFileSync(jsonFilePath, JSON.stringify(db), function (err) {
+
+        if (err) {
+            return console.log(err);
+        } else {
+            console.log("Your note was deleted!");
+        }
+    });
+    res.json(db);
+});
     
     
 
