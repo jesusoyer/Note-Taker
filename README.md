@@ -1,6 +1,6 @@
 # Note Taker 
-[
-](https://jesus-note-taker-heroku.herokuapp.com/)
+
+(https://jesus-note-taker-heroku.herokuapp.com/)
 ## Description<br>
 
 This app allows the user write and save notes. It was created to help track notes for a user who needs to store them in a database. It allows the user to store an unlimited amount of notes. I learned how to create a database as well as how fetch requests work with express server routes. It also help me learn how to deploy an application to heroku.
